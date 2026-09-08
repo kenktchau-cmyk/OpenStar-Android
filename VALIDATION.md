@@ -8,6 +8,7 @@ This repository contains OpenStar Android 1.1.6 (version code 8). The source spl
 - The split Android project passes `assembleDebug` and `lintDebug` with zero errors and 48 warnings.
 - All 172 native ELF libraries in the rebuilt APK pass the 16 KB compatibility check, and `zipalign -c -P 16 4` succeeds.
 - The Android catalogue matches the pinned engine catalogue byte-for-byte. The engine public API and Android bridge are unchanged.
+- The rebuilt APK was installed over the existing app on a 16 KB Android emulator without clearing app data. It generated the public Hong Kong reference sky and identified Polaris, with no Python import error or app crash.
 - Repository and APK copies of the added NumPy LAPACK-lite and Dragon4 notices match. Machine-specific paths, local build settings, caches and signing keys are excluded from version control.
 
 ## Prior app validation
