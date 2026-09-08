@@ -1,0 +1,14 @@
+{
+  "source": "timezone-boundary-builder 2026c",
+  "source_sha256": "7d3f0c5a33b6acd891335c0ad5ba767736b6914cb1a1d68c71921c17ce358948",
+  "source_url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026c/timezones.geojson.zip",
+  "coordinate_scale": 1000000,
+  "cell_degrees": 4,
+  "zones": 419,
+  "boundary_cells": 1679,
+  "compressed_polygon_bytes": 24194122,
+  "largest_uncompressed_cell_bytes": 544486,
+  "index_bytes": 23527,
+  "simplification": "none; clipped and rounded to 6 decimal places",
+  "license": "ODbL-1.0"
+}

@@ -1,0 +1,2 @@
+55051cc4a7a89227c4f00ce1f994827dddf805a4220e3728b5669a102a112b01  wheels/numpy-1.26.2-1-cp313-cp313-android_24_arm64_v8a.whl
+ba41f52b52a4e83a11cf70a9554ed005f3c6a1f4ec474fde57ee126e3cb2adc8  wheels/numpy-1.26.2-1-cp313-cp313-android_24_x86_64.whl

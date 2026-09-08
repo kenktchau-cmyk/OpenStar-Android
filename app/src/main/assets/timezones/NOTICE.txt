@@ -1,0 +1,27 @@
+Contains information from timezone-boundary-builder 2026c, made available under
+the Open Database License (ODbL) 1.0. Boundary data includes information from
+OpenStreetMap contributors. No endorsement is implied.
+
+Database and source release:
+https://github.com/evansiroky/timezone-boundary-builder/releases/tag/2026c
+OpenStreetMap attribution: https://www.openstreetmap.org/copyright
+License: https://opendatacommons.org/licenses/odbl/1-0/
+Full license: app assets/licenses/ODbL-1.0.txt and project licenses/ODbL-1.0.txt.
+
+The adapted database in this directory remains available under ODbL 1.0.
+It is supplied in machine-readable form in the OpenStar source distribution
+and APK. Rebuild script: tools/build_timezone_data.py. Algorithm source:
+app/src/main/java/org/openstar/map/TimeZoneBoundaryLookup.java.
+
+Changes: source polygons clipped to a 4-degree spatial grid; fully covered cells
+indexed directly; border coordinates rounded to six decimal places, delta
+encoded and gzip compressed. No polygon simplification was applied. The .tzb
+extension intentionally contains gzip bytes because Android resource packaging
+would otherwise auto-expand files ending in .gz. The current database contains
+419 named geographic zones, 1,679 border tiles, and a 23,527-byte index.
+
+OpenStar code is licensed separately under MIT. Boundaries are current geographic
+boundaries, not a model of historical boundary changes. Local offset and DST
+rules come from the Android device's time-zone database. Overlapping geographic
+zones are resolved using the first zone in source order. Locations outside
+mapped territorial zones use the conventional 15-degree ocean time zones.

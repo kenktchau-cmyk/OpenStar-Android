@@ -1,0 +1,22 @@
+Additional bundled NumPy 1.26.2 notices
+
+Fetched from the NumPy project's pinned v1.26.2 source on 2026-09-08.
+These notices accompany the bundled C routines in the Android NumPy wheels.
+The wheel binaries are unchanged.
+
+NumPy-1.26.2-lapack-lite-BSD.txt
+Full, unmodified numpy/linalg/lapack_lite/LICENSE.txt.
+Source: https://raw.githubusercontent.com/numpy/numpy/v1.26.2/numpy/linalg/lapack_lite/LICENSE.txt
+SHA-256: a14cc25e10d40a3aa705b7de2fb764a6535d8ee9b2db4e1724900585457dfd55
+
+NumPy-1.26.2-dragon4-MIT.txt
+Full leading copyright/license and provenance comment blocks extracted from
+numpy/core/src/multiarray/dragon4.c before its first #include directive.
+The notice records the permission to use the Dragon4 code under MIT.
+Source: https://raw.githubusercontent.com/numpy/numpy/v1.26.2/numpy/core/src/multiarray/dragon4.c
+Complete source SHA-256: c27d0a8026bdb8876562b720ab24d1688e3827a89f6083cd6e7e8caa9584aba3
+Extracted notice SHA-256: 29575c06f4b11f305c45addbdffa0bab435947218b4328a6f2f26ddd194fb3db
+
+NumPy's own BSD notice and bundled-license inventory remain alongside these
+files. The libdivide license is also retained inside each wheel at
+numpy/core/include/numpy/libdivide/LICENSE.txt.

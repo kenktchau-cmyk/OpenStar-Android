@@ -1,0 +1,32 @@
+OpenStar original code, icon and constellation guides: MIT; Copyright (c) 2026 OpenStar contributors. Full MIT license is included in LICENSE and app assets.
+
+HYG v4.1 star data: David Nash / Astronexus and HYG contributors.
+Source: https://github.com/astronexus/HYG-Database/blob/main/hyg/CURRENT/hygdata_v41.csv
+Current project: https://codeberg.org/astronexus/hyg
+License: Creative Commons Attribution-ShareAlike 4.0 International.
+https://creativecommons.org/licenses/by-sa/4.0/
+Changes: retained HIP entries with magnitude <=6.5; selected HIP, name, J2000 RA (hours), declination (degrees), magnitude and constellation; converted to TSV. This adapted catalogue remains CC BY-SA 4.0. No endorsement is implied. Generated maps and JSON retain attribution.
+
+Astronomy engine: Skyfield 1.54, Brandon Rhodes and contributors, MIT. Documentation: https://rhodesmill.org/skyfield/
+Ephemeris: JPL DE421, NASA/Jet Propulsion Laboratory, downloaded 2026-09-08.
+Source: https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/de421.bsp
+SHA-256: a20a7139da04cbc462454634918e9a9ca69127044e2cc9d4f9c16e238d2deedc
+Used through Skyfield's local load_file API. Date inputs limited to 2000-2050, within DE421 coverage. Built-in Skyfield time-scale tables are used offline.
+
+Embedded runtime: Chaquopy 17.0.0, Chaquo Ltd and contributors, MIT; Python 3.13, Python Software Foundation License. Python runtime distributions retain their bundled third-party notices.
+Python libraries: NumPy 1.26.2 (BSD), jplephem 2.24 (MIT), sgp4 2.27 (MIT), certifi 2026.7.22 (MPL-2.0).
+Android NumPy is rebuilt with bundled reference C BLAS/LAPACK and 16 KB ELF alignment. It includes Chaquopy libcxx 180000, and has no OpenBLAS or libgfortran dependency. See vendor/README.md for recipe, provenance and wheel checksums. Full notices are in licenses/ and bundled in app assets. Legacy OpenBLAS/Fortran license files are retained for the earlier 1.0 distribution.
+Gradle wrapper: Apache License 2.0, Gradle Inc.
+
+Geographic picker: Leaflet 1.9.4, Vladimir Agafonkin and contributors, BSD 2-Clause. Bundled JS/CSS verified against the hashes at https://leafletjs.com/download.html . License: licenses/Leaflet-1.9.4-BSD-2-Clause.txt.
+Offline land overview: Natural Earth v5.1.2, public domain. Unmodified ne_110m_land.geojson from https://github.com/nvkelso/natural-earth-vector/tree/v5.1.2 . SHA-256: 9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9 . Terms: https://www.naturalearthdata.com/about/terms-of-use/ . This coarse overview is not a street map.
+Online street tiles: © OpenStreetMap contributors, https://www.openstreetmap.org/copyright . Map data is available under the Open Database License. Tiles are fetched from https://tile.openstreetmap.org/ for the current viewport with normal HTTP caching; no bulk map downloads are provided. The tile service receives requested map areas and the device's IP address. Usage policy: https://operations.osmfoundation.org/policies/tiles/ . All executable map code is bundled locally.
+
+Original illustrative guides: Orion, Ursa Major, Cassiopeia, Cygnus, Leo, Scorpius, Crux, Summer Triangle. These are not official constellation boundaries.
+Skyfield uses apparent topocentric directions without atmospheric refraction. The catalogue subset does not provide proper motion, parallax or radial velocity. No weather, daylight or terrain model is applied.
+
+
+Offline location time zones: timezone-boundary-builder 2026c, including OpenStreetMap contributors, under the Open Database License (ODbL) 1.0. Source: https://github.com/evansiroky/timezone-boundary-builder/releases/tag/2026c . Attribution: https://www.openstreetmap.org/copyright . License: https://opendatacommons.org/licenses/odbl/1-0/ and licenses/ODbL-1.0.txt. The adapted machine-readable database is included in app assets/timezones and the OpenStar source distribution under ODbL 1.0. Changes: clipped to a spatial grid, rounded to six decimal places, delta encoded and gzip compressed; no boundary simplification. Rebuild instructions and limitations: vendor/timezones/README.md. Java lookup code is OpenStar MIT. Android supplies local offset/DST rules; exact old IANA aliases are supported, while unavailable rules are reported explicitly.
+
+
+Additional NumPy 1.26.2 runtime notices: lapack-lite, copyright The University of Tennessee/Tennessee Research Foundation, University of California Berkeley and University of Colorado Denver, BSD-3-Clause; Dragon4, copyright (c) 2014 Ryan Juckett, MIT by permission recorded in NumPy's source. Full notices are included in licenses/NumPy-1.26.2-lapack-lite-BSD.txt and licenses/NumPy-1.26.2-dragon4-MIT.txt, and mirrored in the APK license assets. Pinned source URLs, extraction details and SHA-256 digests are recorded in licenses/NumPy-1.26.2-extra-notices-SOURCES.txt.

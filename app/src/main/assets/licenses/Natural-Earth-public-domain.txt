@@ -1,0 +1,12 @@
+Natural Earth 1:110m land polygons, dataset release 5.1.2
+
+Natural Earth raster and vector map data are in the public domain. These data
+may be used, modified, and distributed without permission. Attribution is not
+required; OpenStar credits Natural Earth to identify the offline map source.
+
+Terms: https://www.naturalearthdata.com/about/terms-of-use/
+Dataset: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_110m_land.geojson
+Publisher repository: https://github.com/nvkelso/natural-earth-vector
+
+The bundled land.geojson is an unmodified copy of the dataset above. It is a
+coarse world overview, not a source of street-level or navigational detail.

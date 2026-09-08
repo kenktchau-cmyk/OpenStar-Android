@@ -1,0 +1,47 @@
+plugins { id 'com.android.application'; id 'com.chaquo.python' }
+
+// Android Studio may not inherit a terminal's environment. Keep the host-specific
+// interpreter path alongside sdk.dir, outside the shared source configuration.
+def localBuildProperties = new Properties()
+def localBuildFile = rootProject.file('local.properties')
+if (localBuildFile.isFile()) {
+    localBuildFile.withInputStream { localBuildProperties.load(it) }
+}
+def configuredBuildPython = System.getenv('OPENSTAR_BUILD_PYTHON') ?:
+        localBuildProperties.getProperty('openstar.buildPython')
+
+if (!rootProject.file('engine/python/StarMapGenerator.py').isFile()) {
+    throw new GradleException('OpenStar engine is missing. Run: git submodule update --init --recursive')
+}
+
+android {
+    namespace 'org.openstar.map'
+    compileSdk 36
+    // Time-zone cells are already gzip compressed; the compact index is read directly.
+    androidResources { noCompress += ['tzi', 'tzb'] }
+    defaultConfig {
+        applicationId 'org.openstar.map'
+        minSdk 26
+        targetSdk 36
+        versionCode 8
+        versionName '1.1.6'
+        ndk { abiFilters 'arm64-v8a', 'x86_64' }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+chaquopy {
+    defaultConfig {
+        version = '3.13'
+        if (configuredBuildPython) buildPython(configuredBuildPython)
+        pip {
+            // Rebuilt with bundled BLAS/LAPACK and 16 KB alignment: see vendor/README.md.
+            options '--find-links', rootProject.file('vendor/wheels').absolutePath
+            install 'skyfield==1.54'
+            install 'numpy==1.26.2'
+        }
+    }
+    sourceSets { getByName('main') { srcDirs = ['../engine/python'] } }
+}
