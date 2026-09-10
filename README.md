@@ -1,5 +1,7 @@
 # OpenStar for Android
 
+[English](README.md) | [繁體中文](README.zh-TW.md)
+
 An open-source Android sky map built on the [OpenStar Python/Skyfield engine](https://github.com/kenktchau-cmyk/OpenStar). Explore the sky by touch or use an optional camera-and-compass AR view.
 
 ## Get the source
@@ -104,3 +106,4 @@ python tools/check_native_alignment.py app/build/outputs/apk/debug/app-debug.apk
 ## Licenses
 
 Original Android code, icon and constellation guides are **MIT**, see [LICENSE](LICENSE). The shared Python engine is MIT with separately licensed data. The HYG catalogue is **CC BY-SA 4.0**; the adapted time-zone database is **ODbL 1.0**. Keep their attribution and license terms when redistributing data. Full provenance is in [NOTICE.txt](NOTICE.txt), [licenses/](licenses/), and the in-app About menu. The time-zone database source and rebuild steps are in [vendor/timezones/README.md](vendor/timezones/README.md).
+
